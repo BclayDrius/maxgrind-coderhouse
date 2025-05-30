@@ -1,3 +1,6 @@
+/* ==========================
+   ESTILOS GENERALES (compartidos por todas las páginas)
+   ========================== */
 :root{
     --primary-color: #2e2323;
     --secondary-color: rgb(255, 167, 0);
@@ -288,6 +291,7 @@ footer {
 }
 
 @media (max-width: 900px) {
+
     .navbar-list {
         display: none;
     }
@@ -299,10 +303,17 @@ footer {
         align-items: center;
     }
     .hero{
+        font-weight: 600;
         height: 12vh;
         width: 82vw;
         margin: 1rem auto 1rem auto;
     }
+    .hero img{
+        position: absolute;
+        opacity: 0.2;
+        padding: 4px;
+        
+    } 
     .hero-text h1{
         display: none;
     }
@@ -471,7 +482,7 @@ footer {
 }
 
 /* ==========================
-   LOGIN PAGE STYLES
+   LOGIN PAGE STYLES (login.html)
    ========================== */
 .login-section {
     display: flex;
@@ -498,7 +509,7 @@ footer {
 }
 
 /* ==========================
-   REGISTER PAGE STYLES
+   REGISTER PAGE STYLES (register.html)
    ========================== */
 .register-section {
     display: flex;
@@ -525,7 +536,7 @@ footer {
 }
 
 /* ==========================
-   HOME PAGE STYLES
+   HOME PAGE STYLES (home.html)
    ========================== */
 .home-user-profile {
     display: flex;
@@ -708,7 +719,7 @@ footer {
 }
 
 /* ==========================
-   TRAINING PAGE STYLES
+   TRAINING PAGE STYLES (hipertrofia-powerlifting.html, training.html, etc.)
    ========================== */
 .training-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/training-hero-bg.jpg');
@@ -871,9 +882,9 @@ footer {
 }
 
 /* ==========================
-   CALISTHENICS/STREETLIFTING PAGE STYLES
+   CALISTHENICS/STREETLIFTING PAGE STYLES (calisthenics-streetlifting.html, etc.)
    ========================== */
-.cs-hero {
+.calistenia-streetlifting-hero {
     background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url('../img/training-hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -887,48 +898,48 @@ footer {
     border-radius: 0 0 32px 32px;
     box-shadow: 0 6px 32px rgba(0,0,0,0.18);
 }
-.cs-hero-content {
+.calistenia-streetlifting-hero-content {
     background: rgba(46, 35, 35, 0.82);
     border-radius: 18px;
     padding: 2.5rem 2.5rem 2rem 2.5rem;
     max-width: 700px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
-.cs-hero-content h1 {
+.calistenia-streetlifting-hero-content h1 {
     color: var(--secondary-color);
     font-size: 2.7rem;
     margin-bottom: 1.2rem;
     font-weight: 700;
 }
-.cs-hero-content p {
+.calistenia-streetlifting-hero-content p {
     color: #fff;
     font-size: 1.25rem;
     margin: 0;
 }
-.cs-content {
+.calistenia-streetlifting-content {
     padding: 0 2rem 4rem;
 }
-.cs-container {
+.calistenia-streetlifting-container {
     max-width: 1200px;
     margin: 0 auto;
 }
-.cs-section {
+.calistenia-streetlifting-section {
     margin-bottom: 3.5rem;
 }
-.cs-section h2 {
+.calistenia-streetlifting-section h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
     text-align: center;
     color: var(--secondary-color);
     font-weight: 700;
 }
-.cs-programs-grid {
+.calistenia-streetlifting-programs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2.5rem;
 }
-.cs-program-card {
+.calistenia-streetlifting-program-card {
     background: #fff;
     border-radius: 14px;
     padding: 2rem 1.5rem;
@@ -939,40 +950,40 @@ footer {
     flex-direction: column;
     align-items: flex-start;
 }
-.cs-program-card:hover {
+.calistenia-streetlifting-program-card:hover {
     transform: translateY(-7px) scale(1.03);
     border-color: var(--secondary-color);
 }
-.cs-program-card h3 {
+.calistenia-streetlifting-program-card h3 {
     font-size: 1.4rem;
     margin-bottom: 0.7rem;
     color: var(--primary-color);
     font-weight: 600;
 }
-.cs-program-card p {
+.calistenia-streetlifting-program-card p {
     color: #444;
     margin-bottom: 1.2rem;
     line-height: 1.5;
 }
-.cs-program-card ul {
+.calistenia-streetlifting-program-card ul {
     list-style: none;
     padding: 0;
     margin-bottom: 1.2rem;
     width: 100%;
 }
-.cs-program-card ul li {
+.calistenia-streetlifting-program-card ul li {
     color: #666;
     margin-bottom: 0.5rem;
     padding-left: 1.5rem;
     position: relative;
 }
-.cs-program-card ul li:before {
+.calistenia-streetlifting-program-card ul li:before {
     content: "•";
     color: var(--secondary-color);
     position: absolute;
     left: 0;
 }
-.cs-btn {
+.calistenia-streetlifting-btn {
     width: 100%;
     padding: 0.8rem;
     font-weight: 700;
@@ -985,16 +996,16 @@ footer {
     transition: background 0.2s, color 0.2s;
     cursor: pointer;
 }
-.cs-btn:hover {
+.calistenia-streetlifting-btn:hover {
     background: var(--primary-color);
     color: var(--secondary-color);
 }
-.cs-resources-grid {
+.calistenia-streetlifting-resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
-.cs-resource-card {
+.calistenia-streetlifting-resource-card {
     background: #f8f9fa;
     border-radius: 10px;
     padding: 1.5rem;
@@ -1002,46 +1013,372 @@ footer {
     transition: background-color 0.3s, border-color 0.2s;
     border: 2px solid var(--primary-color);
 }
-.cs-resource-card:hover {
+.calistenia-streetlifting-resource-card:hover {
     background: #fff3e0;
     border-color: var(--secondary-color);
 }
-.cs-resource-card h3 {
+.calistenia-streetlifting-resource-card h3 {
     font-size: 1.15rem;
     margin-bottom: 1rem;
     color: var(--primary-color);
     font-weight: 600;
 }
-.cs-resource-card p {
+.calistenia-streetlifting-resource-card p {
     color: #666;
     margin: 0;
     line-height: 1.6;
 }
 @media (max-width: 900px) {
-    .cs-hero {
+    .calistenia-streetlifting-hero {
         height: 38vh;
     }
-    .cs-hero-content {
+    .calistenia-streetlifting-hero-content {
         padding: 1.2rem 1rem;
     }
-    .cs-section h2 {
+    .calistenia-streetlifting-section h2 {
         font-size: 1.5rem;
     }
-    .cs-programs-grid {
+    .calistenia-streetlifting-programs-grid {
         grid-template-columns: 1fr;
     }
 }
 @media (max-width: 480px) {
-    .cs-hero {
+    .calistenia-streetlifting-hero {
         height: 28vh;
     }
-    .cs-hero-content h1 {
+    .calistenia-streetlifting-hero-content h1 {
         font-size: 1.3rem;
     }
-    .cs-content {
+    .calistenia-streetlifting-content {
         padding: 0 0.5rem 2rem;
     }
-    .cs-program-card {
+    .calistenia-streetlifting-program-card {
         padding: 1rem;
+    }
+}
+
+/* ==========================
+   HIPERTROFIA/POWERLIFTING PAGE STYLES (hipertrofia-powerlifting.html)
+   ========================== */
+.hipertrofia-powerlifting-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/training-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+}
+.hipertrofia-powerlifting-hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+}
+.hipertrofia-powerlifting-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+.hipertrofia-powerlifting-hero p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.hipertrofia-powerlifting-content {
+    padding: 0 2rem 4rem;
+}
+.hipertrofia-powerlifting-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hipertrofia-powerlifting-section {
+    margin-bottom: 4rem;
+}
+.hipertrofia-powerlifting-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+.hipertrofia-powerlifting-programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+.hipertrofia-powerlifting-program-card {
+    background: var(--background-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+.hipertrofia-powerlifting-program-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+}
+.hipertrofia-powerlifting-program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+.hipertrofia-powerlifting-program-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.hipertrofia-powerlifting-program-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+.hipertrofia-powerlifting-program-card ul li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.hipertrofia-powerlifting-program-card ul li:before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+.hipertrofia-powerlifting-program-card .btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-weight: 600;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.hipertrofia-powerlifting-program-card .btn:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+.hipertrofia-powerlifting-resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.hipertrofia-powerlifting-resource-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+.hipertrofia-powerlifting-resource-card:hover {
+    background: #e9ecef;
+    border-color: var(--secondary-color);
+}
+.hipertrofia-powerlifting-resource-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+.hipertrofia-powerlifting-resource-card p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+@media (max-width: 900px) {
+    .hipertrofia-powerlifting-hero {
+        height: 50vh;
+    }
+    .hipertrofia-powerlifting-hero h1 {
+        font-size: 2.5rem;
+    }
+    .hipertrofia-powerlifting-hero p {
+        font-size: 1.1rem;
+    }
+    .hipertrofia-powerlifting-section h2 {
+        font-size: 2rem;
+    }
+    .hipertrofia-powerlifting-programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .hipertrofia-powerlifting-hero {
+        height: 40vh;
+    }
+    .hipertrofia-powerlifting-hero h1 {
+        font-size: 2rem;
+    }
+    .hipertrofia-powerlifting-content {
+        padding: 0 1rem 3rem;
+    }
+    .hipertrofia-powerlifting-program-card {
+        padding: 1.5rem;
+    }
+}
+
+/* ==========================
+   COMBATE PAGE STYLES (combate.html)
+   ========================== */
+.combate-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/training-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+}
+.combate-hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+}
+.combate-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+.combate-hero p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.combate-content {
+    padding: 0 2rem 4rem;
+}
+.combate-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.combate-section {
+    margin-bottom: 4rem;
+}
+.combate-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+.combate-programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+.combate-program-card {
+    background: var(--background-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+.combate-program-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+}
+.combate-program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+.combate-program-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.combate-program-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+.combate-program-card ul li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.combate-program-card ul li:before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+.combate-program-card .btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-weight: 600;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.combate-program-card .btn:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+.combate-resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.combate-resource-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+.combate-resource-card:hover {
+    background: #e9ecef;
+    border-color: var(--secondary-color);
+}
+.combate-resource-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+.combate-resource-card p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+@media (max-width: 900px) {
+    .combate-hero {
+        height: 50vh;
+    }
+    .combate-hero h1 {
+        font-size: 2.5rem;
+    }
+    .combate-hero p {
+        font-size: 1.1rem;
+    }
+    .combate-section h2 {
+        font-size: 2rem;
+    }
+    .combate-programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .combate-hero {
+        height: 40vh;
+    }
+    .combate-hero h1 {
+        font-size: 2rem;
+    }
+    .combate-content {
+        padding: 0 1rem 3rem;
+    }
+    .combate-program-card {
+        padding: 1.5rem;
     }
 }

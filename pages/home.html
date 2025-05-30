@@ -21,10 +21,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../pages/login.html">Login</a>
+                            <a class="nav-link" href="login.html">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../pages/register.html">Register</a>
+                            <a class="nav-link" href="register.html">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="home.html">Home</a>
@@ -35,69 +35,56 @@
         </nav>
     </header>
     <main>
-        <!-- Perfil de usuario y nivel -->
-        <section class="user-profile-home">
-            <img src="../img/logos/user-avatar.png" alt="Avatar" class="user-avatar-home">
-            <div class="user-info-home">
-                <h2>¡Bienvenido, <span class="user-name-home">Usuario</span>!</h2>
-                <div class="level-section-home">
-                    <span class="level-label-home">Nivel:</span>
-                    <span class="level-value-home">12</span>
-                    <div class="level-bar-bg-home">
-                        <div class="level-bar-fill-home" style="width: 60%"></div>
-                    </div>
-                </div>
-            </div>
-            <button class="btn-help-home">Solicitar ayuda</button>
-        </section>
-
-        <!-- Rutina principal para continuar -->
-        <section class="main-routine-home">
-            <h3>Tu rutina principal</h3>
-            <div class="main-routine-card-home">
-                <img src="../img/power-hiper.jpg" alt="Hipertrofia" class="main-routine-img-home">
-                <div class="main-routine-info-home">
-                    <h4>Hipertrofia / Powerlifting</h4>
-                    <p>Fuerza y masa muscular al máximo. <br><strong>Última sesión: Piernas</strong></p>
-                    <button class="btn-continue-home">Continuar rutina</button>
-                </div>
+        <section class="cs-hero">
+            <div class="cs-hero-content">
+                <h1>¡Bienvenido a MaXGrind!</h1>
+                <p>Tu progreso, tu misión. Aquí puedes continuar tu rutina principal, explorar otras disciplinas y acceder a recursos exclusivos.</p>
             </div>
         </section>
-
-        <!-- Rutinas adicionales -->
-        <section class="additional-routines-home">
-            <h3>Otras rutinas</h3>
-            <div class="additional-routines-list-home">
-                <div class="additional-routine-card-home">
-                    <img src="../img/combate.jpg" alt="Combate">
-                    <div>
-                        <h5>Deportes de combate</h5>
-                        <p>Entrena como un guerrero.</p>
+        <section class="cs-content">
+            <div class="cs-container">
+                <div class="cs-section">
+                    <h2>Tu rutina principal</h2>
+                    <div class="cs-programs-grid">
+                        <div class="cs-program-card">
+                            <h3>Hipertrofia / Powerlifting</h3>
+                            <p>Fuerza y masa muscular al máximo. <br><strong>Última sesión: Piernas</strong></p>
+                            <button class="cs-btn">Continuar rutina</button>
+                        </div>
                     </div>
                 </div>
-                <div class="additional-routine-card-home">
-                    <img src="../img/calistenia.webp" alt="Calistenia">
-                    <div>
-                        <h5>Calistenia / Streetlifting</h5>
-                        <p>Domina tu peso corporal y añade fuerza brutal.</p>
+                <div class="cs-section">
+                    <h2>Otras rutinas</h2>
+                    <div class="cs-programs-grid">
+                        <div class="cs-program-card">
+                            <h3>Deportes de combate</h3>
+                            <p>Entrena como un guerrero.</p>
+                            <button class="cs-btn">Ver rutina</button>
+                        </div>
+                        <div class="cs-program-card">
+                            <h3>Calistenia / Streetlifting</h3>
+                            <p>Domina tu peso corporal y añade fuerza brutal.</p>
+                            <button class="cs-btn">Ver rutina</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Puedes agregar más rutinas aquí -->
-            </div>
-        </section>
-
-        <!-- Botones info-section -->
-        <section class="info-sections-wrapper">
-            <div class="info-centerer">
-                <article class="info-section">
-                    <a href="">Changelog</a>
-                </article>
-                <article class="info-section">
-                    <a href="">Merch</a>
-                </article>
-                <article class="info-section">
-                    <a href="">Community</a>
-                </article>
+                <div class="cs-section">
+                    <h2>Recursos e información</h2>
+                    <div class="info-link-list">
+                        <a class="info-link-item" href="">
+                            <img class="info-link-img" src="../img/logos/raw.png" alt="Changelog">
+                            <div class="info-link-text">Changelog</div>
+                        </a>
+                        <a class="info-link-item" href="">
+                            <img class="info-link-img" src="../img/logos/merch.png" alt="Merch">
+                            <div class="info-link-text">Merch</div>
+                        </a>
+                        <a class="info-link-item" href="">
+                            <img class="info-link-img" src="../img/logos/community.png" alt="Community">
+                            <div class="info-link-text">Community</div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
