@@ -12,7 +12,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
     color: var(--text-color);
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,14 +47,10 @@ header {
     opacity: 0.9;
     height: 4rem;
 }
-
 .navbar {
     background-color: var(--primary-color) !important;
     height: 100%;
-}
-.navbar *{
-    color: var(--text-color) !important;
-    background-color: var(--primary-color) !important;
+    color: white !important;
 }
 .nav-item{
     font-size: 18px;
@@ -66,6 +62,9 @@ header {
 }
 #navbarNav{
     justify-content: end;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 #navbarNav *:hover {
     color: var(--secondary-color) !important;
@@ -79,26 +78,28 @@ header {
 main {
     padding: 4rem 0 0 0;
 }
-.hero{
+footer {
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    font-size: 1rem;
+    color: #ffffff;
+    background: var(--primary-color);
+}
+/* ==========================
+    ESTILOS DE LA PÁGINA PRINCIPAL (index.html)
+========================== */
+.hero {
+    background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25));
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 15vh;
-    background-color: var(--secondary-color);
-    margin: 2rem auto 2rem auto;
-    width: 75vw;
-    border-radius: 4px;
-    box-shadow: 0 4px 16px rgba(0,0,0,1);
-}
-.hero.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-}
-.hero img{
-    max-height: 7em;
-    padding: 0 1rem 0 1rem;
-}
+    text-align: center;
+    height: 12vh;
+}   
 .hero-text{
     width: 80%;
 }
@@ -113,7 +114,7 @@ main {
     margin: 0;
     padding: 0;
 }
-.routines-section {
+.routine-info-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -121,18 +122,16 @@ main {
     width: 80vw;
     margin: 2rem auto 2rem auto;
     height: 70vh;
+    background-image: url('../img/logos/maxgrind-bglogo.png');
     background-color: var(--primary-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
     border-radius: 4px;
     box-shadow: 0 4px 16px rgba(0,0,0,1);
-    transition: width 0.4s, height 0.4s, margin-top 0.4s;
     gap: 0;
 }
-.routines-section.expanded {
-    width: 95vw;
-    height: 90vh;
-    margin-top: -6vh;
-}
-.routine-item {
+.routine-info-item {
     display: grid;
     grid-template-columns: 1fr 2fr;
     justify-content: center;
@@ -148,17 +147,15 @@ main {
     border: 2px solid transparent;
     text-decoration: none;
 }
-.routine-item img {
+.routine-info-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     background: #ddd;
-    margin: 0;
     border-radius: 4px 0 0 4px;
-    transition: transform 0.2s;
     display: block;
 }
-.routine-card-text {
+.routine-info-item-text {
     padding: 0.5rem 0.5rem 0.5rem 0;
     display: flex;
     flex-direction: column;
@@ -167,17 +164,17 @@ main {
     height: 100%;
     max-width: 25em;
 }
-.routine-card-text h2 {
+.routine-info-item-text h2 {
     font-size: 1.5rem;
     margin: 0 0 0.2rem 0;
     font-weight: bold;
 }
-.routine-card-text p {
+.routine-info-item-text p {
     font-size: 1.1em;
     margin: 0;
     text-align: center;
 }
-.routine-item:hover {
+.routine-info-item:hover {
     color: #fff;
     border-color: #fff;
     background: #222;
@@ -187,238 +184,56 @@ main {
     border: 2px solid var(--secondary-color);
     text-decoration: none;
 }
-.routine-item:hover img {
-    transform: scale(1.08);
-}
-/* Tarjetas tipo info-section */
-.info-sections-wrapper {
+.quick-links-section {
     display: flex;
     flex-direction: row;
     gap: 2.5rem;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-.info-centerer{
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    align-items: center;
-    justify-content: center;
-}
-.info-section {
-    position: relative; /* Necesario para el overlay */
-    display: grid; 
-    grid-template-rows: 1fr 2fr;
-    width: 25rem;
-    background: #fff;
-    color: #223;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(30, 41, 59, 0.18);
-    margin: 2rem auto;
-    padding: 0;
-    overflow: hidden;
-    gap: 0;
     height: 40vh;
-    transition: color 0.2s, border-color 0.2s, background 0.2s, height 0.2s, width 0.2s;
-}
-.info-section a{
-    display: block;
-    position: absolute;
-    inset: 0;
     width: 100%;
-    height: 100%;
-    z-index: 3; /* Por encima del overlay */
-    text-decoration: none;
-}
-.info-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(30, 41, 59, 0); /* Sin oscurecer por defecto */
-    transition: background 0.3s;
-    z-index: 1;
-    pointer-events: none;
-    border-radius: 18px;
-}
-.info-section:hover::before {
-    background: rgba(255, 255, 255, 0.45);
-     /* aclarece al hacer hover */
-}
-.info-section > * {
-    position: relative;
-    z-index: 2;
-}
-.info-section:nth-child(1){
-    background-image: url("../img/logos/raw.png");
-    background-position: center;
-    background-size: cover;
-}  
-.info-section:nth-child(2){
-    background-image: url("../img/logos/merch.png");
-    background-position: center;
-    background-size: cover;
-}  
-.info-section:nth-child(3){
-    background-image: url("../img/logos/community.png");
-    background-position: center;
-    background-size: cover;
-}  
-.info-section:hover{
-    width: 35rem;
-    color: #fff;
-    box-shadow: 0 4px 30px rgb(0, 0, 0);
-    margin: 1.5rem;
-
-}
-.info-section img,
-.info-section.reverse img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    border: none;
-    margin: 0;
-}
-
-footer {
-    border-top: 2px solid #bbb;
-    text-align: center;
-    padding: 1.5rem 0 1rem 0;
-    font-size: 1rem;
-    color: #ffffff;
-    background: var(--primary-color);
-    margin-top: 2rem;
-}
-
-@media (max-width: 900px) {
-
-    .navbar-list {
-        display: none;
-    }
-    .navbar {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-    .hero{
-        font-weight: 600;
-        height: 12vh;
-        width: 82vw;
-        margin: 1rem auto 1rem auto;
-    }
-    .hero img{
-        position: absolute;
-        opacity: 0.2;
-        padding: 4px;
-        
-    } 
-    .hero-text h1{
-        display: none;
-    }
-    .routines-section {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        height: 75vh;
-        width: 92vw;
-        padding: 0.5em 0 0.5rem 0;
-    }
-    .routine-item {
-        width: 95%;
-        height: 95%;
-        transition: width 0.2s, height 0.2s;
-    }
-    .routine-item:hover {
-        width: 100%;
-        height: 100%;
-    }
-    .routine-item img {
-        transition: transform 0.2s;
-    }
-    .routine-item:hover img {
-        transform: scale(1.04);
-    }
-    .info-section, .info-section.reverse {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    .info-card {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 700px) {
-
-    .hero{
-        border: 3px solid var(--primary-color);
-        font-size: 0.85rem;
-    }
-    .info-section,
-    .info-section.reverse {
-        flex-direction: column;
-        max-width: 95vw;
-    }
-    .info-card,
-    .info-section.reverse {
-        flex-direction: column;
-    }
-    .info-card img,
-    .info-section.reverse img {
-        width: 100%;
-        height: 180px;
-        border-radius: 18px 18px 0 0;
-    }
-    .info-text {
-        padding: 1rem;
-        min-height: unset;
-    }
-}
-
-.info-link-list {
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
-    width: 100%;
-    align-items: stretch;
     justify-content: center;
+    align-items: center;
     margin: 2.5rem 0 2.5rem 0;
 }
-.info-link-item {
+.quick-link {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 18rem;
-    min-width: 180px;
-    max-width: 22vw;
+    height: 30vh;
+    width: 20vw;
     background: #fff;
     color: #223;
+    border: 2px solid white;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(30, 41, 59, 0.18);
     overflow: hidden;
     text-decoration: none;
-    transition: box-shadow 0.2s, transform 0.2s;
-    border: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s, height 0.2s, width 0.2s, box-shadow 0.2s;
+    
 }
-.info-link-item:hover {
-    box-shadow: 0 4px 30px rgb(0, 0, 0, 0.18);
-    transform: translateY(-6px) scale(1.04);
-    border: 2px solid var(--secondary-color);
-    color: #222;
+.quick-link:hover {
+    height: 35vh;
+    width: 25vw;
+    background: #fff;
+    color: #223;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgb(30, 41, 59);
+    border: 3px solid var(--secondary-color);
+    border-radius: 25px;
 }
-.info-link-img {
+.quick-link:hover *{
+    background-color: var(--secondary-color);
+    color: white;
+}
+.quick-link img {
     width: 100%;
-    height: 9rem;
+    height: 100%;
     object-fit: cover;
     background: #eee;
     border-radius: 18px 18px 0 0;
     display: block;
 }
-.info-link-text {
+.quick-link-text {
     width: 100%;
     padding: 1.2rem 0.5rem;
     text-align: center;
@@ -432,57 +247,89 @@ footer {
     align-items: center;
     justify-content: center;
 }
-@media (max-width: 900px) {
-    .info-link-list {
+.about-section{
+    background: linear-gradient(rgba(255, 167, 0, 0.25), rgb(46, 35, 35) );
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 20vh;
+    margin: 0;
+}   
+.about{
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .hero h1{
+        display: none;
+    }
+    .routine-info-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        height: 75vh;
+        width: 92vw;
+        padding: 0.5em 0 0.5rem 0;
+    }
+    .routine-info-item {
+        width: 95%;
+        height: 95%;
+        transition: width 0.2s, height 0.2s;
+    }
+    .routine-info-item:hover {
+        width: 100%;
+        height: 100%;
+    }
+    .routine-info-item-text h2 {
+        font-size: 1.3rem;
+        margin: 0 0 0.2rem 0;
+        font-weight: bold;
+    }
+    .routine-info-item-text p {
+        font-size: 0.9em;
+        margin: 0;
+        text-align: center;
+    }
+    .quick-links-section {
         flex-direction: column;
         gap: 1.5rem;
         align-items: center;
         height: 95vh;
     }
-    .info-link-item {
+    .quick-link {
         height: 100%;
         width: 90vw;
-        max-width: 95vw;
     }
-    .info-link-img {
-        height: 80%;
+    .quick-link:hover {
+        height: 80vh;
+        width: 80vw;
+    }
+    .about{
+        width: 90%;
     }
 }
+@media (max-width: 480px) {
 
-/* Hero informativo al final */
-.info-hero-section {
-    width: 100vw;
-    min-height: 180px;
-    margin: 2.5rem 0 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('img/background-example.jpg') center/cover no-repeat; /* Cambia esta ruta por la imagen que desees */
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(30, 41, 59, 0.10);
-    padding: 2.5rem 0;
+    .routine-info-item-text h2 {
+        font-size: 0.9rem;
+    }
+    .routine-info-item-text p {
+        font-size: 0.7rem;
+    }
+    .about-section {
+        height: 35vh;
+    }
+    .about{
+        height: auto;
+        width: 95%;
+    }
 }
-.info-hero-content {
-    background: rgba(255,255,255,0.92);
-    border-radius: 12px;
-    padding: 2rem 2.5rem;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-.info-hero-content h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-.info-hero-content p {
-    color: #222;
-    font-size: 1.15rem;
-    margin: 0;
-}
-
 /* ==========================
-   LOGIN PAGE STYLES (login.html)
+    LOGIN PAGE STYLES (login.html)
    ========================== */
 .login-section {
     display: flex;
@@ -492,10 +339,15 @@ footer {
     padding: 2rem;
 }
 .login-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;    
+    justify-content:space-around;
     background: var(--primary-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 30px rgb(0, 0, 0);
+    height: 40vh;
     width: 100%;
     max-width: 400px;
 }
@@ -503,13 +355,26 @@ footer {
 .login-container p,
 .login-container label {
     color: var(--text-color);
+    text-align: center;
 }
 .login-container a {
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important;
 }
-
+.login-form{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+@media (max-width: 480px) {
+    .login-container {
+        height: 45vh;
+    }
+}
+    
 /* ==========================
-   REGISTER PAGE STYLES (register.html)
+    REGISTER PAGE STYLES (register.html)
    ========================== */
 .register-section {
     display: flex;
@@ -523,8 +388,12 @@ footer {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 30px rgb(0, 0, 0);
+    height: auto;
     width: 100%;
     max-width: 400px;
+}
+.register-container h2, .register-container p{
+    text-align: center;
 }
 .register-container h2,
 .register-container p,
@@ -532,364 +401,25 @@ footer {
     color: var(--text-color);
 }
 .register-container a {
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important;
 }
-
-/* ==========================
-   HOME PAGE STYLES (home.html)
-   ========================== */
-.home-user-profile {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem auto;
-    width: 75vw;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    padding: 2rem 2.5rem;
-    color: #222;
-    position: relative;
-}
-.home-user-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--secondary-color);
-}
-.home-user-info h2 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    color: #222;
-}
-.home-level-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-.home-level-label {
-    font-weight: 500;
-    color: #444;
-}
-.home-level-value {
-    font-weight: bold;
-    color: var(--secondary-color);
-    font-size: 1.3em;
-}
-.home-level-bar-bg {
-    background: #eee;
-    border-radius: 8px;
-    width: 180px;
-    height: 16px;
-    overflow: hidden;
-    margin-left: 1rem;
-}
-.home-level-bar-fill {
-    background: var(--secondary-color);
-    height: 100%;
-    border-radius: 8px 0 0 8px;
-    transition: width 0.3s;
-}
-.home-btn-help {
-    margin-left: auto;
-    background: var(--secondary-color);
-    color: #222;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 0.7rem 1.5rem;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: background 0.2s, color 0.2s;
-}
-.home-btn-help:hover {
-    background: #222;
-    color: #fff;
-}
-
-.home-main-routine {
-    width: 75vw;
-    margin: 2rem auto 1.5rem auto;
-    background: var(--primary-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    padding: 1.5rem 2rem;
-    color: #fff;
-}
-.home-main-routine h3 {
-    margin-bottom: 1.2rem;
-    color: var(--secondary-color);
-}
-.home-main-routine-card {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-.home-main-routine-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-.home-main-routine-info h4 {
-    margin: 0 0 0.5rem 0;
-    color: #fff;
-}
-.home-main-routine-info p {
-    margin: 0 0 1rem 0;
-    color: #eee;
-}
-.home-btn-continue {
-    background: var(--secondary-color);
-    color: #222;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: background 0.2s, color 0.2s;
-}
-.home-btn-continue:hover {
-    background: #fff;
-    color: var(--secondary-color);
-}
-
-.home-additional-routines {
-    width: 75vw;
-    margin: 1.5rem auto 2rem auto;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    padding: 1.5rem 2rem;
-    color: #222;
-}
-.home-additional-routines h3 {
-    margin-bottom: 1.2rem;
-    color: var(--primary-color);
-}
-.home-additional-routines-list {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-.home-additional-routine-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    padding: 0.8rem 1.2rem;
-    min-width: 220px;
-    max-width: 320px;
-}
-.home-additional-routine-card img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-.home-additional-routine-card h5 {
-    margin: 0 0 0.2rem 0;
-    color: var(--primary-color);
-}
-.home-additional-routine-card p {
-    margin: 0;
-    color: #444;
-}
-
-@media (max-width: 900px) {
-    .home-user-profile, .home-main-routine, .home-additional-routines {
-        width: 95vw;
-        flex-direction: column;
-        padding: 1rem;
-    }
-    .home-main-routine-card {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .home-additional-routines-list {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
-/* ==========================
-   TRAINING PAGE STYLES (hipertrofia-powerlifting.html, training.html, etc.)
-   ========================== */
-.training-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/training-hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    display: flex;
-    align-items: center;
+.register-form{
+    display:flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    color: var(--text-color);
-    margin-bottom: 4rem;
-}
-.training-hero-content {
-    max-width: 800px;
-    padding: 0 2rem;
-}
-.training-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-.training-hero p {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-.training-content {
-    padding: 0 2rem 4rem;
-}
-.training-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.training-section {
-    margin-bottom: 4rem;
-}
-.training-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: var(--secondary-color);
-}
-.programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-.training-program-card {
-    background: var(--background-color);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    border: 2px solid var(--primary-color);
-}
-.training-program-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--secondary-color);
-}
-.training-program-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-.training-program-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-.training-program-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
-}
-.training-program-card ul li {
-    color: #666;
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-.training-program-card ul li:before {
-    content: "•";
-    color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-}
-.training-program-card .btn {
-    width: 100%;
-    padding: 0.75rem;
-    font-weight: 600;
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
-}
-.training-program-card .btn:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-.resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-.training-resource-card {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    border: 2px solid var(--primary-color);
-}
-.training-resource-card:hover {
-    background: #e9ecef;
-    border-color: var(--secondary-color);
-}
-.training-resource-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-.training-resource-card p {
-    color: #666;
-    margin: 0;
-    line-height: 1.6;
-}
-@media (max-width: 900px) {
-    .training-hero {
-        height: 50vh;
-    }
-    .training-hero h1 {
-        font-size: 2.5rem;
-    }
-    .training-hero p {
-        font-size: 1.1rem;
-    }
-    .training-section h2 {
-        font-size: 2rem;
-    }
-    .programs-grid {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 480px) {
-    .training-hero {
-        height: 40vh;
-    }
-    .training-hero h1 {
-        font-size: 2rem;
-    }
-    .training-content {
-        padding: 0 1rem 3rem;
-    }
-    .training-program-card {
-        padding: 1.5rem;
-    }
+    align-items: center;
 }
 
 /* ==========================
-   CALISTHENICS/STREETLIFTING PAGE STYLES (calisthenics-streetlifting.html, etc.)
+    SHARED PAGE STYLES (hypertrophy-powerlifting.html, calisthenics-streetlifting.html, martial-arts.html)
    ========================== */
-.calistenia-streetlifting-hero {
+.hp-hero, .cs-hero, .ma-hero {
     background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url('../img/training-hero-bg.jpg');
     background-size: cover;
     background-position: center;
     height: 55vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -898,92 +428,78 @@ footer {
     border-radius: 0 0 32px 32px;
     box-shadow: 0 6px 32px rgba(0,0,0,0.18);
 }
-.calistenia-streetlifting-hero-content {
-    background: rgba(46, 35, 35, 0.82);
-    border-radius: 18px;
-    padding: 2.5rem 2.5rem 2rem 2.5rem;
-    max-width: 700px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-}
-.calistenia-streetlifting-hero-content h1 {
+
+.hp-hero h1, .cs-hero h1, .ma-hero h1 {
     color: var(--secondary-color);
     font-size: 2.7rem;
     margin-bottom: 1.2rem;
     font-weight: 700;
 }
-.calistenia-streetlifting-hero-content p {
+
+.hp-hero p, .cs-hero p, .ma-hero p {
     color: #fff;
     font-size: 1.25rem;
     margin: 0;
 }
-.calistenia-streetlifting-content {
+
+.hp-routine-categories, .cs-routine-categories, .ma-routine-categories {
     padding: 0 2rem 4rem;
 }
-.calistenia-streetlifting-container {
+
+.hp-routine-category, .cs-routine-category, .ma-routine-category {
     max-width: 1200px;
     margin: 0 auto;
 }
-.calistenia-streetlifting-section {
-    margin-bottom: 3.5rem;
-}
-.calistenia-streetlifting-section h2 {
-    font-size: 2.2rem;
+
+.hp-routine-category h2, .cs-routine-category h2, .ma-routine-category h2,
+.hp-additional h2, .cs-additional h2, .ma-additional h2 {
+    font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
     color: var(--secondary-color);
-    font-weight: 700;
 }
-.calistenia-streetlifting-programs-grid {
+
+.hp-routine-container, .cs-routine-container, .ma-routine-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
-.calistenia-streetlifting-program-card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 4px 16px rgba(46, 35, 35, 0.10);
+
+.hp-routine, .cs-routine, .ma-routine {
+    background: var(--background-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     border: 2px solid var(--primary-color);
-    transition: transform 0.3s, border-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
-.calistenia-streetlifting-program-card:hover {
-    transform: translateY(-7px) scale(1.03);
+
+.hp-routine:hover, .cs-routine:hover, .ma-routine:hover {
+    transform: translateY(-5px);
     border-color: var(--secondary-color);
 }
-.calistenia-streetlifting-program-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.7rem;
+
+.hp-routine h3, .cs-routine h3, .ma-routine h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
-    font-weight: 600;
 }
-.calistenia-streetlifting-program-card p {
-    color: #444;
-    margin-bottom: 1.2rem;
-    line-height: 1.5;
+
+.hp-routine p, .cs-routine p, .ma-routine p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
-.calistenia-streetlifting-program-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.2rem;
-    width: 100%;
-}
-.calistenia-streetlifting-program-card ul li {
+
+.hp-routine ul li, .cs-routine ul li, .ma-routine ul li {
     color: #666;
     margin-bottom: 0.5rem;
     padding-left: 1.5rem;
     position: relative;
 }
-.calistenia-streetlifting-program-card ul li:before {
-    content: "•";
-    color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-}
-.calistenia-streetlifting-btn {
+
+.hp-routine button, .cs-routine button, .ma-routine button {
     width: 100%;
     padding: 0.8rem;
     font-weight: 700;
@@ -996,389 +512,323 @@ footer {
     transition: background 0.2s, color 0.2s;
     cursor: pointer;
 }
-.calistenia-streetlifting-btn:hover {
+
+.hp-routine button:hover, .cs-routine button:hover, .ma-routine button:hover {
     background: var(--primary-color);
     color: var(--secondary-color);
 }
-.calistenia-streetlifting-resources-grid {
+
+.hp-additional, .cs-additional, .ma-additional {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.hp-additional-grid, .cs-additional-grid, .ma-additional-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
-.calistenia-streetlifting-resource-card {
+
+.hp-additional-card, .cs-additional-card, .ma-additional-card {
     background: #f8f9fa;
     border-radius: 10px;
     padding: 1.5rem;
     text-align: center;
-    transition: background-color 0.3s, border-color 0.2s;
+    transition: background-color 0.3s ease;
     border: 2px solid var(--primary-color);
 }
-.calistenia-streetlifting-resource-card:hover {
-    background: #fff3e0;
+
+.hp-additional-card:hover, .cs-additional-card:hover, .ma-additional-card:hover {
+    background: #e9ecef;
     border-color: var(--secondary-color);
 }
-.calistenia-streetlifting-resource-card h3 {
-    font-size: 1.15rem;
+
+.hp-additional-card h3, .cs-additional-card h3, .ma-additional-card h3 {
+    font-size: 1.25rem;
     margin-bottom: 1rem;
     color: var(--primary-color);
-    font-weight: 600;
 }
-.calistenia-streetlifting-resource-card p {
+
+.hp-additional-card p, .cs-additional-card p, .ma-additional-card p {
     color: #666;
     margin: 0;
     line-height: 1.6;
 }
-@media (max-width: 900px) {
-    .calistenia-streetlifting-hero {
+
+@media (max-width: 768px) {
+    .hp-hero, .cs-hero, .ma-hero {
         height: 38vh;
-    }
-    .calistenia-streetlifting-hero-content {
         padding: 1.2rem 1rem;
     }
-    .calistenia-streetlifting-section h2 {
-        font-size: 1.5rem;
+    .hp-routine-categories h2, .cs-routine-categories h2, .ma-routine-categories h2 {
+        font-size: 2rem;
     }
-    .calistenia-streetlifting-programs-grid {
+    .hp-routine-grid, .cs-routine-grid, .ma-routine-grid {
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 480px) {
-    .calistenia-streetlifting-hero {
+    .hp-hero, .cs-hero, .ma-hero {
         height: 28vh;
     }
-    .calistenia-streetlifting-hero-content h1 {
+    .hp-hero h1, .cs-hero h1, .ma-hero h1 {
         font-size: 1.3rem;
     }
-    .calistenia-streetlifting-content {
-        padding: 0 0.5rem 2rem;
-    }
-    .calistenia-streetlifting-program-card {
-        padding: 1rem;
-    }
 }
-
 /* ==========================
-   HIPERTROFIA/POWERLIFTING PAGE STYLES (hipertrofia-powerlifting.html)
+    HOME PAGE STYLES (home.html)
    ========================== */
-.hipertrofia-powerlifting-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/training-hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
+.home-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100vh;
+    background: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0 0 0;
+    z-index: 1001;
+}
+.home-sidebar-icon {
+    width: 36px;
+    height: 36px;
+    margin: 1.2rem 0;
+    opacity: 0.85;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.home-sidebar-icon:hover {
+    opacity: 1;
+}
+.home-sidebar-bottom {
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+}
+.home-topbar {
+    margin-left: 70px;
+    height: 60px;
+    background: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem 0 2.5rem;
+    border-bottom: 1px solid #d2bebe;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.home-search-box {
+    display: flex;
+    align-items: center;
+    background: var(--background-color);
+    border-radius: 20px;
+    border: 1.5px solid #ccc;
+    padding: 0.2rem 1rem;
+    margin-right: 2rem;
+}
+.home-search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.1rem;
+    color: #222;
+    width: 160px;
+}
+.home-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.home-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: var(--text-color);
-    margin-bottom: 4rem;
 }
-.hipertrofia-powerlifting-hero-content {
-    max-width: 800px;
-    padding: 0 2rem;
+.home-user-avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 }
-.hipertrofia-powerlifting-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-.hipertrofia-powerlifting-hero p {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-.hipertrofia-powerlifting-content {
-    padding: 0 2rem 4rem;
-}
-.hipertrofia-powerlifting-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.hipertrofia-powerlifting-section {
-    margin-bottom: 4rem;
-}
-.hipertrofia-powerlifting-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: var(--secondary-color);
-}
-.hipertrofia-powerlifting-programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-.hipertrofia-powerlifting-program-card {
-    background: var(--background-color);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    border: 2px solid var(--primary-color);
-}
-.hipertrofia-powerlifting-program-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--secondary-color);
-}
-.hipertrofia-powerlifting-program-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-.hipertrofia-powerlifting-program-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-.hipertrofia-powerlifting-program-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
-}
-.hipertrofia-powerlifting-program-card ul li {
-    color: #666;
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-.hipertrofia-powerlifting-program-card ul li:before {
-    content: "•";
-    color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-}
-.hipertrofia-powerlifting-program-card .btn {
-    width: 100%;
-    padding: 0.75rem;
+.home-user-name {
     font-weight: 600;
-    background: var(--secondary-color);
     color: var(--primary-color);
-    border: none;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
+    font-size: 1.1rem;
 }
-.hipertrofia-powerlifting-program-card .btn:hover {
-    background: var(--primary-color);
+.home-streak-level {
+    font-size: 1rem;
     color: var(--secondary-color);
+    font-weight: 500;
 }
-.hipertrofia-powerlifting-resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.home-main-content {
+    margin-left: 70px;
+    margin-top: 70px;
+    padding: 2rem 2.5rem 2rem 2.5rem;
+}
+.home-section-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+}
+.home-workouts-grid {
+    display: flex;
     gap: 2rem;
+    margin-bottom: 1.2rem;
 }
-.hipertrofia-powerlifting-resource-card {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
+.home-workout-card {
+    background: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 2px solid var(--primary-color);
 }
-.hipertrofia-powerlifting-resource-card:hover {
-    background: #e9ecef;
-    border-color: var(--secondary-color);
+.home-workout-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
 }
-.hipertrofia-powerlifting-resource-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+.home-workout-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--primary-color);
+    margin: 0.7rem 0 0.2rem 0;
 }
-.hipertrofia-powerlifting-resource-card p {
-    color: #666;
-    margin: 0;
-    line-height: 1.6;
+.home-workout-card-day {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.7rem;
 }
-@media (max-width: 900px) {
-    .hipertrofia-powerlifting-hero {
-        height: 50vh;
-    }
-    .hipertrofia-powerlifting-hero h1 {
-        font-size: 2.5rem;
-    }
-    .hipertrofia-powerlifting-hero p {
-        font-size: 1.1rem;
-    }
-    .hipertrofia-powerlifting-section h2 {
-        font-size: 2rem;
-    }
-    .hipertrofia-powerlifting-programs-grid {
-        grid-template-columns: 1fr;
-    }
+.home-challenge-banner {
+    background: #bfcf6b;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    margin: 1.5rem 0 2rem 0;
+    text-align: center;
+    font-weight: 500;
 }
-@media (max-width: 480px) {
-    .hipertrofia-powerlifting-hero {
-        height: 40vh;
-    }
-    .hipertrofia-powerlifting-hero h1 {
-        font-size: 2rem;
-    }
-    .hipertrofia-powerlifting-content {
-        padding: 0 1rem 3rem;
-    }
-    .hipertrofia-powerlifting-program-card {
-        padding: 1.5rem;
-    }
+.home-info-cards {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
 }
-
-/* ==========================
-   COMBATE PAGE STYLES (combate.html)
-   ========================== */
-.combate-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/training-hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
+.home-info-card {
+    background: #f7b3b3;
+    border-radius: 12px;
+    padding: 1.2rem 1rem;
+    flex: 1 1 0;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border: 2px solid var(--primary-color);
+}
+.home-info-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.7rem;
+}
+.home-info-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.home-info-card-desc {
+    font-size: 0.98rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.home-info-card-flag {
+    width: 22px;
+    height: 16px;
+    border-radius: 3px;
+    margin-top: 0.3rem;
+}
+.home-updates-section {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+.home-updates-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+.home-updates-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.2rem;
+}
+.home-updates-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: var(--text-color);
-    margin-bottom: 4rem;
-}
-.combate-hero-content {
-    max-width: 800px;
-    padding: 0 2rem;
-}
-.combate-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-.combate-hero p {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-.combate-content {
-    padding: 0 2rem 4rem;
-}
-.combate-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.combate-section {
-    margin-bottom: 4rem;
-}
-.combate-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: var(--secondary-color);
-}
-.combate-programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-.combate-program-card {
     background: var(--background-color);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 1.2rem;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
     border: 2px solid var(--primary-color);
 }
-.combate-program-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--secondary-color);
+.home-updates-card img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
 }
-.combate-program-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.home-updates-card-content {
+    text-align: left;
+}
+.home-updates-card-content p {
+    font-size: 1rem;
     color: var(--primary-color);
-}
-.combate-program-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-.combate-program-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
-}
-.combate-program-card ul li {
-    color: #666;
     margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
 }
-.combate-program-card ul li:before {
-    content: "•";
+.home-updates-card-flag {
+    width: 22px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+}
+.home-updates-card-pronto {
+    font-size: 0.95rem;
     color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-}
-.combate-program-card .btn {
-    width: 100%;
-    padding: 0.75rem;
     font-weight: 600;
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
-}
-.combate-program-card .btn:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-.combate-resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-.combate-resource-card {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    border: 2px solid var(--primary-color);
-}
-.combate-resource-card:hover {
-    background: #e9ecef;
-    border-color: var(--secondary-color);
-}
-.combate-resource-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-.combate-resource-card p {
-    color: #666;
-    margin: 0;
-    line-height: 1.6;
+    margin-top: 0.7rem;
 }
 @media (max-width: 900px) {
-    .combate-hero {
-        height: 50vh;
-    }
-    .combate-hero h1 {
-        font-size: 2.5rem;
-    }
-    .combate-hero p {
-        font-size: 1.1rem;
-    }
-    .combate-section h2 {
-        font-size: 2rem;
-    }
-    .combate-programs-grid {
-        grid-template-columns: 1fr;
-    }
+    .home-main-content { padding: 1rem; }
+    .home-workouts-grid, .home-info-cards { flex-direction: column; gap: 1.2rem; }
+    .home-workout-card, .home-info-card { width: 100%; min-width: 0; }
+    .home-updates-card { flex-direction: column; }
+    .home-updates-card img { width: 100%; height: 120px; }
 }
-@media (max-width: 480px) {
-    .combate-hero {
-        height: 40vh;
-    }
-    .combate-hero h1 {
-        font-size: 2rem;
-    }
-    .combate-content {
-        padding: 0 1rem 3rem;
-    }
-    .combate-program-card {
-        padding: 1.5rem;
-    }
+@media (max-width: 600px) {
+    .home-sidebar { width: 54px; }
+    .home-main-content { margin-left: 54px; padding: 0.5rem; }
+    .home-topbar { margin-left: 54px; padding: 0 0.5rem; }
 }
