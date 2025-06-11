@@ -1,0 +1,20 @@
+{
+  "name": "maxgrind-coderhouse",
+  "version": "1.0.0",
+  "description": "Entrega del proyecto para la cursada",
+  "homepage": "https://github.com/BclayDrius/maxgrind-coderhouse#readme",
+  "bugs": {
+    "url": "https://github.com/BclayDrius/maxgrind-coderhouse/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BclayDrius/maxgrind-coderhouse.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
