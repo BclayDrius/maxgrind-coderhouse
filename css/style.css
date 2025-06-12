@@ -265,9 +265,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hero h1{
-        
-    }
     .routine-info-section {
         grid-template-columns: 1fr;
         gap: 1.5rem;
