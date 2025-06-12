@@ -17,7 +17,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
-    color: $text-color; // Using SCSS variable
+    color: $text-color; 
     background-image: url("../img/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -115,31 +115,69 @@ footer {
     ESTILOS DE LA PÁGINA PRINCIPAL (index.html)
 ========================== */
 .hero {
-    background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25));
+    min-height: 45vh;
+    padding: 4rem 0 3rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, rgba(46,35,35,0.92) 60%, rgba(255,167,0,0.35)), url("../img/bg.png");
     background-size: cover;
     background-position: center;
-    color: $text-color; 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 12vh;
+    color: $text-color;
+    overflow: hidden;
+    animation: hero-fadein 1.2s cubic-bezier(0.4,0,0.2,1);
 
-    &-text {
-        width: 80%;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(46,35,35,0.7) 60%, rgba(255,167,0,0.18));
+        z-index: 1;
+    }
+
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        background: rgba(0,0,0,0.38);
+        padding: 2.5rem 2.5rem 2rem 2.5rem;
+        border-radius: 18px;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: hero-text-pop 1.3s cubic-bezier(0.4,0,0.2,1);
 
         h1 {
-            font-weight: 600;
-            font-size: 2em;
-            margin: 0;
-            padding: 0;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: $secondary-color;
+            margin-bottom: 1.2rem;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #000a;
         }
-
         p {
-            font-size: 1.2em;
-            margin: 0;
-            padding: 0;
+            font-size: 1.35rem;
+            color: #fff;
+            text-shadow: 0 1px 4px #0008;
+            margin-bottom: 2rem;
+        }
+        .hero-btn {
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 0.8rem 2.2rem;
+            font-size: 1.2rem;
+            background: $secondary-color;
+            color: $primary-color;
+            border: none;
+            box-shadow: 0 2px 12px rgba(255,167,0,0.18);
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            text-decoration: none;
+            &:hover {
+                background: $primary-color;
+                color: $secondary-color;
+                transform: translateY(-2px) scale(1.04);
+            }
         }
     }
 }
@@ -309,7 +347,7 @@ footer {
 
 @media (max-width: 768px) {
     .hero h1 {
-        display: none;
+        font-size: 2rem !important;
     }
 
     .routine-info-section {
@@ -663,4 +701,15 @@ footer {
             font-size: 1.3rem;
         }
     }
+}
+
+@keyframes hero-fadein {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: none;}
+}
+
+@keyframes hero-text-pop {
+    0% { opacity: 0; transform: scale(0.95);}
+    80% { opacity: 1; transform: scale(1.03);}
+    100% { opacity: 1; transform: scale(1);}
 }
