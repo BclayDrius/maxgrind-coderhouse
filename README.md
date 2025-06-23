@@ -1,4 +1,3 @@
 # maxgrind-coderhouse
 
-Entrega del proyecto para la cursada
-w11
+Entrega final del proyecto, muchas gracias Gabi y SantIAgo!!!
