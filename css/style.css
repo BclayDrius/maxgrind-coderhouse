@@ -20,7 +20,7 @@
 }
 @font-face {
   font-family: "Gotham";
-  src: url("../../fonts/gotham-medium.ttf");
+  src: url("/fonts/gotham-medium.ttf");
   font-weight: normal;
 }
 body {
