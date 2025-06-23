@@ -7,14 +7,14 @@
 
 
 .ma-hero {
-    @include hero-section('../../img/combate.jpg');
+    @include hero-section('../img/combate.jpg');
 }
 .cs-hero {
-    @include hero-section('../../img/calisthenics.webp');
+    @include hero-section('../img/calisthenics.webp');
 }
 
 .hp-hero {
-    @include hero-section('../../img/power-hiper.jpg');
+    @include hero-section('../img/power-hiper.jpg');
 }
 .hp-routine-categories,
 .cs-routine-categories,

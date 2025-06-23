@@ -15,12 +15,12 @@
    ========================== */
 @font-face {
   font-family: "Gotham";
-  src: url("../../fonts/gotham-bold.ttf");
+  src: url("../fonts/gotham-bold.ttf");
   font-weight: bold;
 }
 @font-face {
   font-family: "Gotham";
-  src: url("../../fonts/gotham-medium.ttf");
+  src: url("../fonts/gotham-medium.ttf");
   font-weight: normal;
 }
 body {
@@ -29,7 +29,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: var(--text-color);
-  background-image: url("/img/bg.png");
+  background-image: url("../img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -521,7 +521,7 @@ footer {
     SHARED PAGE STYLES (hypertrophy-powerlifting.html, calisthenics-streetlifting.html, martial-arts.html)
    ========================== */
 .ma-hero {
-  background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url("../../img/combate.jpg");
+  background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url("../img/combate.jpg");
   background-size: cover;
   background-position: center;
   height: 45vh;
@@ -548,7 +548,7 @@ footer {
 }
 
 .cs-hero {
-  background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url("../../img/calisthenics.webp");
+  background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url("../img/calisthenics.webp");
   background-size: cover;
   background-position: center;
   height: 45vh;
@@ -575,7 +575,7 @@ footer {
 }
 
 .hp-hero {
-  background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url("../../img/power-hiper.jpg");
+  background: linear-gradient(rgba(46, 35, 35, 0.85), rgba(255, 167, 0, 0.25)), url("../img/power-hiper.jpg");
   background-size: cover;
   background-position: center;
   height: 45vh;
