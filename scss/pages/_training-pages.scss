@@ -1,0 +1,119 @@
+@use "../base" as *;
+
+/* ==========================
+    SHARED PAGE STYLES (hypertrophy-powerlifting.html, calisthenics-streetlifting.html, martial-arts.html)
+   ========================== */
+
+
+
+.ma-hero {
+    @include hero-section('../../img/combate.jpg');
+}
+.cs-hero {
+    @include hero-section('../../img/calisthenics.webp');
+}
+
+.hp-hero {
+    @include hero-section('../../img/power-hiper.jpg');
+}
+.hp-routine-categories,
+.cs-routine-categories,
+.ma-routine-categories {
+    @include routine-categories-section;
+
+    .hp-routine-category,
+    .cs-routine-category,
+    .ma-routine-category {
+        display: grid;
+        place-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.hp-routine-container,
+.cs-routine-container,
+.ma-routine-container {
+    @include routine-container-grid;
+}
+
+.hp-routine,
+.cs-routine,
+.ma-routine {
+    @include routine-card;
+    ul{
+        li{
+            text-align: left
+        }
+    }
+}
+
+.hp-additional,
+.cs-additional,
+.ma-additional {
+    @include additional-section;
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    &-card {
+        @include additional-card;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hp-hero,
+    .cs-hero,
+    .ma-hero {
+        height: 38vh;
+        padding: 1.2rem 1rem;
+    }
+
+    .hp-routine-categories,
+    .cs-routine-categories,
+    .ma-routine-categories {
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .hp-routine-grid,
+    .cs-routine-grid,
+    .ma-routine-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hp-hero,
+    .cs-hero,
+    .ma-hero {
+        height: 28vh;
+
+        h1 {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@keyframes hero-text-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

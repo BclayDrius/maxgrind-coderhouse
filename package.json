@@ -1,14 +1,14 @@
 {
-  "name": "maxgrind-coderhouse",
+  "name": "training",
   "version": "1.0.0",
-  "description": "Entrega del proyecto para la cursada",
-  "homepage": "https://github.com/BclayDrius/maxgrind-coderhouse#readme",
+  "description": "",
+  "homepage": "https://github.com/BclayDrius/maxfront#readme",
   "bugs": {
-    "url": "https://github.com/BclayDrius/maxgrind-coderhouse/issues"
+    "url": "https://github.com/BclayDrius/maxfront/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BclayDrius/maxgrind-coderhouse.git"
+    "url": "git+https://github.com/BclayDrius/maxfront.git"
   },
   "license": "ISC",
   "author": "",
@@ -16,5 +16,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "sass": "^1.89.2"
   }
 }

@@ -1,0 +1,9 @@
+@use "../base/variables" as *;
+/* FOOTER STYLES */
+footer {
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    font-size: 1rem;
+    color: #ffffff;
+    background: $primary-color;
+}
